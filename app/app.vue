@@ -82,14 +82,16 @@ const steamDuration = computed(() => isBoiling.value ? "0.5s" : "2s");
           @click="scrollTo('home')"
         >
           <Coffee class="w-6 h-6 text-[#d97706]" />
-          Systems Brew
+          Sebastian Prokop
         </div>
-        <div class="hidden md:flex gap-8">
-          <!-- FIX: 'group' class added here in HTML, removed from CSS -->
-          <button @click="scrollTo('work')" class="nav-item group">The Menu</button>
-          <button @click="scrollTo('tools')" class="nav-item group">The Machine</button>
-          <button @click="scrollTo('contact')" class="nav-item group">Order</button>
+        
+        <!-- Inspiration Style Links -->
+        <div class="hidden md:flex gap-6 font-mono text-sm font-bold items-center">
+          <button @click="scrollTo('work')" class="hover:text-[#d97706] transition-colors">whoami // projects</button>
+          <button @click="scrollTo('tools')" class="hover:text-[#d97706] transition-colors">machine</button>
+          <button @click="scrollTo('contact')" class="hover:text-[#d97706] transition-colors">contact</button>
         </div>
+
         <button @click="scrollTo('contact')" class="md:hidden p-2 bg-[#431407] text-white rounded-md">
           <Mail class="w-5 h-5" />
         </button>
@@ -101,14 +103,14 @@ const steamDuration = computed(() => isBoiling.value ? "0.5s" : "2s");
       <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-12">
         <div class="text-center md:text-left max-w-lg">
           <div class="inline-block px-4 py-1 bg-[#431407] text-[#fff7ed] rounded-sm text-xs font-bold mb-6 tracking-wide shadow-sm transform -rotate-2">
-            ☕️ FRESHLY COMPILED CODE
+            ☕️ SYSTEMS ENGINEER
           </div>
           <h1 class="font-serif text-5xl md:text-7xl text-[#431407] mb-6 leading-[1.1] font-black">
-            Brewing <br/>
-            <span class="text-[#d97706]">Low-Level</span> Logic.
+            Hey! I'm <br/>
+            <span class="text-[#d97706]">Sebastian.</span>
           </h1>
           <p class="text-xl text-[#78350f] mb-8 leading-relaxed font-medium">
-            Systems Engineer specializing in C/C++, Embedded Systems, and high-performance backend architecture. No bloat, just pure caffeine.
+            Specializing in C/C++, Embedded Systems, and high-performance backend architecture. No bloat, just pure caffeine.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <button @click="scrollTo('work')" class="px-8 py-4 bg-[#431407] text-white font-bold rounded-sm hover:bg-[#5d4037] hover:shadow-lg hover:-translate-y-1 transition-all uppercase tracking-wide">
@@ -290,7 +292,7 @@ const steamDuration = computed(() => isBoiling.value ? "0.5s" : "2s");
 
     <!-- Footer -->
     <footer class="py-8 text-center text-[#78350f] text-sm font-bold uppercase tracking-widest bg-[#fffbeb] border-t border-[#e7e5e4]">
-      <p>© 2024 Systems Brew. Powered by Caffeine & C++.</p>
+      <p>© 2024 Sebastian Prokop. Powered by Caffeine & C++.</p>
       <button @click="scrollTo('home')" class="mt-4 flex items-center gap-2 mx-auto hover:text-[#431407]">
         Top up <ArrowUp class="w-4 h-4" />
       </button>
@@ -299,14 +301,6 @@ const steamDuration = computed(() => isBoiling.value ? "0.5s" : "2s");
 </template>
 
 <style scoped>
-/* FIX: Removed 'group' from @apply to fix build error */
-.nav-item {
-  @apply font-serif font-bold text-[#431407] hover:text-[#92400e] transition-colors relative text-lg;
-}
-.nav-item::after {
-  content: '';
-  @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-[#92400e] transition-all group-hover:w-full;
-}
 .tag {
   @apply text-xs font-bold text-[#78350f] bg-[#fff7ed] px-2 py-1 rounded-md border border-[#fed7aa];
 }
