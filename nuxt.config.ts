@@ -5,6 +5,6 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
 
   app:{
-    baseURL: '/whoami'
+    baseURL: '/whoami/'
   }
 })
