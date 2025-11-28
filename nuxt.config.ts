@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
 
   app: {
-    baseURL: '/',
+    baseURL: '/whoami/',
     buildAssetsDir: 'assets',
   }
 })
