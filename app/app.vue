@@ -1,16 +1,32 @@
 <script setup>
-import { ref, onMounted, onUnmounted, computed } from 'vue';
-import { Github, Linkedin, Mail, Coffee, Cpu, Terminal, Zap, ArrowUp, Code2, Send, Star } from 'lucide-vue-next';
+// FIX: Added 'h' to the imports so the icon renders correctly
+import { ref, onMounted, onUnmounted, computed, h } from 'vue';
+import { Github, Linkedin, Mail, Coffee, Cpu, Terminal, Zap, ArrowUp, Code2, Send, Star, Settings } from 'lucide-vue-next';
+
+// --- Custom Kotlin Icon ---
+// This functional component properly accepts size classes (w-12 h-12) via 'attrs'
+const KotlinIcon = (props, { attrs }) => 
+  h('svg', { 
+    viewBox: "0 0 24 24",
+    fill: "currentColor",
+    width: "100%",         // ADD
+    height: "100%",        // ADD
+    xmlns: "http://www.w3.org/2000/svg",
+    ...attrs               // zachová Tailwind classy typu w-12 h-12
+  }, [
+    h('path', { d: "M1.3 24l11.3-11.5L24 24zM0 0h12L0 12.5zM13.4 0L0 14v10l12-12L24 0z" })
+  ]);
+
+
 
 // --- Tools Data ---
 const tools = [
-  { name: 'C++ 17/20', icon: Code2 },
-  { name: 'C (Embedded)', icon: Cpu },
-  { name: 'Rust', icon: Zap },
+  { name: 'C++ 23', icon: Code2 },
+  { name: 'C', icon: Cpu },
   { name: 'Linux/Bash', icon: Terminal },
-  { name: 'CMake', icon: '⚙️' },
+  { name: 'Java', icon: Coffee },
   { name: 'GDB / Valgrind', icon: '🐞' },
-  { name: 'Git', icon: '🌳' },
+  { name: 'Kotlin', icon: KotlinIcon },
   { name: 'Python', icon: '🐍' },
 ];
 
@@ -52,7 +68,6 @@ const scrollTo = (id) => {
 };
 
 const handleMugClick = () => {
-  // Cycle: Empty (0) -> Cold (1) -> Hot (2) -> Boiling (3)
   heatLevel.value = (heatLevel.value + 1) % 4;
 };
 
@@ -103,14 +118,14 @@ const steamDuration = computed(() => isBoiling.value ? "0.5s" : "2s");
       <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-12">
         <div class="text-center md:text-left max-w-lg">
           <div class="inline-block px-4 py-1 bg-[#431407] text-[#fff7ed] rounded-sm text-xs font-bold mb-6 tracking-wide shadow-sm transform -rotate-2">
-            ☕️ SYSTEMS ENGINEER
+            ☕️ FULL STACK DEVELOPER
           </div>
           <h1 class="font-serif text-5xl md:text-7xl text-[#431407] mb-6 leading-[1.1] font-black">
             Hey! I'm <br/>
             <span class="text-[#d97706]">Sebastian.</span>
           </h1>
           <p class="text-xl text-[#78350f] mb-8 leading-relaxed font-medium">
-            Specializing in C/C++, Embedded Systems, and high-performance backend architecture. No bloat, just pure caffeine.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur scelerisque odio, u
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <button @click="scrollTo('work')" class="px-8 py-4 bg-[#431407] text-white font-bold rounded-sm hover:bg-[#5d4037] hover:shadow-lg hover:-translate-y-1 transition-all uppercase tracking-wide">
@@ -175,13 +190,13 @@ const steamDuration = computed(() => isBoiling.value ? "0.5s" : "2s");
             <div class="relative z-10">
               <div class="mb-6">
                 <div class="flex justify-between items-start mb-2">
-                  <h3 class="font-serif font-bold text-2xl text-[#431407]">Engine Core</h3>
+                  <h3 class="font-serif font-bold text-2xl text-[#431407]">Lorem</h3>
                   <Star class="w-5 h-5 text-[#d97706]" fill="#d97706" />
                 </div>
-                <p class="text-xs font-bold uppercase tracking-widest text-[#a8a29e]">Custom Game Engine</p>
+                <p class="text-xs font-bold uppercase tracking-widest text-[#a8a29e]">Lorem ips</p>
               </div>
               <p class="text-[#5d4037] leading-relaxed text-sm md:text-base mb-6 min-h-[80px]">
-                A 2D rendering engine written in pure C++ and OpenGL. Handles 10,000+ sprites at 60FPS with custom memory allocators.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur scelerisque odio, u
               </p>
               <div class="flex flex-wrap gap-2 pt-4 border-t border-[#f5f5f4]">
                 <span v-for="tag in ['C++', 'OpenGL', 'CMake']" :key="tag" class="tag">{{ tag }}</span>
@@ -196,37 +211,16 @@ const steamDuration = computed(() => isBoiling.value ? "0.5s" : "2s");
              <div class="relative z-10">
               <div class="mb-6">
                 <div class="flex justify-between items-start mb-2">
-                  <h3 class="font-serif font-bold text-2xl text-[#431407]">RTOS Controller</h3>
+                  <h3 class="font-serif font-bold text-2xl text-[#431407]">Lorem</h3>
                   <Star class="w-5 h-5 text-[#d97706]" fill="#d97706" />
                 </div>
                 <p class="text-xs font-bold uppercase tracking-widest text-[#a8a29e]">Embedded Systems</p>
               </div>
               <p class="text-[#5d4037] leading-relaxed text-sm md:text-base mb-6 min-h-[80px]">
-                Firmware for an ARM Cortex-M4 microcontroller. Features a custom task scheduler and I2C sensor drivers.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci accusantium aliquid autem animi velit! Odit tempora doloribus obcaecati veniam tempore voluptatibus omnis, sapiente ipsum soluta dolorum quae commodi! Quos, error.
               </p>
               <div class="flex flex-wrap gap-2 pt-4 border-t border-[#f5f5f4]">
                 <span v-for="tag in ['C', 'FreeRTOS', 'STM32']" :key="tag" class="tag">{{ tag }}</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project Card 3 -->
-          <div class="bg-white p-8 rounded-lg border border-[#e7e5e4] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden">
-             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#d97706] to-[#431407]"></div>
-             <div class="absolute -right-12 -top-12 w-24 h-24 bg-[#fff7ed] rounded-full group-hover:scale-150 transition-transform duration-500"></div>
-             <div class="relative z-10">
-              <div class="mb-6">
-                <div class="flex justify-between items-start mb-2">
-                  <h3 class="font-serif font-bold text-2xl text-[#431407]">NetProxy</h3>
-                  <Star class="w-5 h-5 text-[#d97706]" fill="#d97706" />
-                </div>
-                <p class="text-xs font-bold uppercase tracking-widest text-[#a8a29e]">Networking Tool</p>
-              </div>
-              <p class="text-[#5d4037] leading-relaxed text-sm md:text-base mb-6 min-h-[80px]">
-                A multi-threaded HTTP proxy server written from scratch. Implements thread pooling and LRU caching for high throughput.
-              </p>
-              <div class="flex flex-wrap gap-2 pt-4 border-t border-[#f5f5f4]">
-                <span v-for="tag in ['C++20', 'Linux', 'Sockets']" :key="tag" class="tag">{{ tag }}</span>
               </div>
             </div>
           </div>
@@ -248,11 +242,24 @@ const steamDuration = computed(() => isBoiling.value ? "0.5s" : "2s");
            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#d97706] to-[#431407]"></div>
            
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center font-mono text-sm">
-            <div v-for="tool in tools" :key="tool.name" class="p-2 hover:bg-[#44403c] rounded transition-colors cursor-default group">
-              <component :is="tool.icon" v-if="typeof tool.icon !== 'string'" class="mx-auto mb-2 text-[#d97706] group-hover:scale-110 transition-transform" />
-              <div v-else class="text-xl mb-2 group-hover:scale-110 transition-transform">{{ tool.icon }}</div>
-              <div class="font-bold mt-2">{{ tool.name }}</div>
-            </div>
+            <div 
+  v-for="tool in tools"
+  :key="tool.name"
+  class="p-2 hover:bg-[#44403c] rounded transition-colors cursor-default group"
+>
+  <component
+    :is="tool.icon"
+    v-if="typeof tool.icon !== 'string'"
+    class="mx-auto mb-2 text-[#d97706] w-10 h-10 group-hover:scale-110 transition-transform"
+/>
+
+  <div v-else class="text-xl mb-2 group-hover:scale-110 transition-transform">
+    {{ tool.icon }}
+  </div>
+
+  <div class="font-bold mt-2">{{ tool.name }}</div>
+</div>
+
           </div>
           <div class="mt-8 text-center text-xs text-[#a8a29e] border-t border-[#44403c] pt-4">
              &gt; System Status: OPTIMIZED
@@ -269,7 +276,7 @@ const steamDuration = computed(() => isBoiling.value ? "0.5s" : "2s");
           
           <h2 class="font-serif text-4xl font-black text-[#431407] mb-6 mt-4">Place an Order</h2>
           <p class="text-[#5d4037] mb-8 text-lg font-medium">
-            Need a Systems Engineer for your next high-performance project? My inbox is always open for new opportunities.
+            LOREM
           </p>
           
           <div class="flex flex-col gap-4">
@@ -292,7 +299,7 @@ const steamDuration = computed(() => isBoiling.value ? "0.5s" : "2s");
 
     <!-- Footer -->
     <footer class="py-8 text-center text-[#78350f] text-sm font-bold uppercase tracking-widest bg-[#fffbeb] border-t border-[#e7e5e4]">
-      <p>© 2024 Sebastian Prokop. Powered by Caffeine & C++.</p>
+      <p>© 2025 Sebastian Prokop. Powered by Caffeine & C++.</p>
       <button @click="scrollTo('home')" class="mt-4 flex items-center gap-2 mx-auto hover:text-[#431407]">
         Top up <ArrowUp class="w-4 h-4" />
       </button>
