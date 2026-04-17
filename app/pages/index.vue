@@ -120,7 +120,7 @@ const steamDuration = computed(() => isBoiling.value ? "0.5s" : "2s");
             <span class="text-[#d97706]">Sebastian.</span>
           </h1>
           <p class="text-xl text-[#78350f] mb-8 leading-relaxed font-medium">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur scelerisque odio, u
+            Enjoy and explore my pages.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <button @click="scrollTo('work')" class="px-8 py-4 bg-[#431407] text-white font-bold rounded-sm hover:bg-[#5d4037] hover:shadow-lg hover:-translate-y-1 transition-all uppercase tracking-wide">
@@ -200,26 +200,6 @@ const steamDuration = computed(() => isBoiling.value ? "0.5s" : "2s");
             </div>
           </NuxtLink>
 
-          <!-- Project Card 2 -->
-          <div class="bg-white p-8 rounded-lg border border-[#e7e5e4] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden">
-             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#d97706] to-[#431407]"></div>
-             <div class="absolute -right-12 -top-12 w-24 h-24 bg-[#fff7ed] rounded-full group-hover:scale-150 transition-transform duration-500"></div>
-             <div class="relative z-10">
-              <div class="mb-6">
-                <div class="flex justify-between items-start mb-2">
-                  <h3 class="font-serif font-bold text-2xl text-[#431407]">Lorem</h3>
-                  <Star class="w-5 h-5 text-[#d97706]" fill="#d97706" />
-                </div>
-                <p class="text-xs font-bold uppercase tracking-widest text-[#a8a29e]">Embedded Systems</p>
-              </div>
-              <p class="text-[#5d4037] leading-relaxed text-sm md:text-base mb-6 min-h-[80px]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci accusantium aliquid autem animi velit! Odit tempora doloribus obcaecati veniam tempore voluptatibus omnis, sapiente ipsum soluta dolorum quae commodi! Quos, error.
-              </p>
-              <div class="flex flex-wrap gap-2 pt-4 border-t border-[#f5f5f4]">
-                <span v-for="tag in ['C', 'FreeRTOS', 'STM32']" :key="tag" class="tag">{{ tag }}</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -276,17 +256,18 @@ const steamDuration = computed(() => isBoiling.value ? "0.5s" : "2s");
           </p>
           
           <div class="flex flex-col gap-4">
-            <a href="mailto:hello@example.com" class="group flex items-center justify-center gap-3 w-full p-4 bg-[#431407] text-[#fff7ed] font-bold text-lg rounded-sm hover:bg-[#5d4037] hover:-translate-y-1 transition-all uppercase tracking-widest">
+            <a href="mailto:sebastian.prokop.offic@gmail.com" class="group flex items-center justify-center gap-3 w-full p-4 bg-[#431407] text-[#fff7ed] font-bold text-lg rounded-sm hover:bg-[#5d4037] hover:-translate-y-1 transition-all uppercase tracking-widest">
               <Send class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               hello@systemsbrew.com
             </a>
             <div class="flex gap-4 justify-center mt-4">
-              <a href="#" class="p-3 bg-[#fff7ed] border-2 border-[#431407] text-[#431407] rounded-full hover:bg-[#ffedd5] transition-colors">
+              <a href="https://github.com/prosteSebastian/" class="p-3 bg-[#fff7ed] border-2 border-[#431407] text-[#431407] rounded-full hover:bg-[#ffedd5] transition-colors">
                 <Github class="w-6 h-6" />
               </a>
+              <!--
               <a href="#" class="p-3 bg-[#fff7ed] border-2 border-[#431407] text-[#431407] rounded-full hover:bg-[#ffedd5] transition-colors">
                 <Linkedin class="w-6 h-6" />
-              </a>
+              </a> -->
             </div>
           </div>
         </div>
