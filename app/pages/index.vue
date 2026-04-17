@@ -252,13 +252,13 @@ const steamDuration = computed(() => isBoiling.value ? "0.5s" : "2s");
           
           <h2 class="font-serif text-4xl font-black text-[#431407] mb-6 mt-4">Place an Order</h2>
           <p class="text-[#5d4037] mb-8 text-lg font-medium">
-            LOREM
+            Mail
           </p>
           
           <div class="flex flex-col gap-4">
             <a href="mailto:sebastian.prokop.offic@gmail.com" class="group flex items-center justify-center gap-3 w-full p-4 bg-[#431407] text-[#fff7ed] font-bold text-lg rounded-sm hover:bg-[#5d4037] hover:-translate-y-1 transition-all uppercase tracking-widest">
               <Send class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              hello@systemsbrew.com
+              sebastian.prokop.offic@gmail.com
             </a>
             <div class="flex gap-4 justify-center mt-4">
               <a href="https://github.com/prosteSebastian/" class="p-3 bg-[#fff7ed] border-2 border-[#431407] text-[#431407] rounded-full hover:bg-[#ffedd5] transition-colors">
@@ -276,7 +276,7 @@ const steamDuration = computed(() => isBoiling.value ? "0.5s" : "2s");
 
     <!-- Footer -->
     <footer class="py-8 text-center text-[#78350f] text-sm font-bold uppercase tracking-widest bg-[#fffbeb] border-t border-[#e7e5e4]">
-      <p>© 2025 Sebastian Prokop. Powered by Caffeine & C++.</p>
+      <p>© 2026 Sebastian Prokop. Powered by Caffeine & C++.</p>
       <button @click="scrollTo('home')" class="mt-4 flex items-center gap-2 mx-auto hover:text-[#431407]">
         Top up <ArrowUp class="w-4 h-4" />
       </button>
